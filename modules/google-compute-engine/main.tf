@@ -12,6 +12,7 @@ resource "google_service_account" "default" {
 resource "google_compute_instance" "default" {
   name         = var.instance_name
   machine_type = var.instance_machine_type
+  allow_stopping_for_update = var.allow_stopping_for_update
 
   tags = var.instance_tags
 

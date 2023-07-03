@@ -20,6 +20,12 @@ variable "subnetwork_name" {
 ############################################
 ## Optional variables
 ############################################
+variable allow_stopping_for_update {
+  type        = bool
+  default     = true
+  description = "Allow Terraform to stop instance to update"
+}
+
 
 variable "static_public_ip" {
   type        = string
