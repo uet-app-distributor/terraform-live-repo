@@ -17,5 +17,5 @@ module "compute_engine" {
   instance_image        = "ubuntu-os-cloud/ubuntu-2204-lts"
 
   subnetwork_name  = module.network.subnetwork_name
-  static_public_ip = module.network.instance_static_public_ip_address
+  static_public_ip = module.network.instance_static_public_ip_address[0]
 }
