@@ -20,3 +20,15 @@ variable "enable_instance_static_public_ip" {
   default     = false
   description = "Enable creation of static public IP for an instance"
 }
+
+variable "default_firewall_source_range" {
+  type        = list(string)
+  default     = ["0.0.0.0/0"]
+  description = "Source IP ranges for the default firewall rule"
+}
+
+variable "default_firewall_ports" {
+  type        = list(string)
+  default     = ["22", "80", "443", "8080"]
+  description = "Allowed ports for the default firewall rule"
+}
