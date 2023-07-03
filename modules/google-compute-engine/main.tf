@@ -23,9 +23,10 @@ resource "google_compute_instance" "default" {
   }
 
   network_interface {
-    network = var.network_name
-
-    access_config {}
+    subnetwork = var.subnetwork_name
+    access_config {
+      nat_ip = var.static_public_ip
+    }
   }
 
   metadata = {

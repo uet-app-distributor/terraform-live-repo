@@ -12,15 +12,20 @@ variable instance_machine_type {
   description = "Machine type of Compute Engine instance"
 }
 
-variable network_name {
+variable subnetwork_name {
   type        = string
-  description = "Name of network to attach to the network interface of the instance"
+  description = "Name of subnetwork to attach to the network interface of the instance"
 }
-
 
 ############################################
 ## Optional variables
 ############################################
+
+variable static_public_ip {
+  type        = string
+  default     = ""
+  description = "Static public IP"
+}
 
 variable instance_tags {
   type        = list(string)
