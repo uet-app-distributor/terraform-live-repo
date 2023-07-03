@@ -1,3 +1,3 @@
-module providers {
+module "providers" {
   source = "../providers"
 }

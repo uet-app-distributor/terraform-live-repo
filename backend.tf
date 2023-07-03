@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket  = "uet-app-distributor-tfstate"
-    prefix  = "remote_state"
+    bucket = "uet-app-distributor-tfstate"
+    prefix = "remote_state"
   }
 }
