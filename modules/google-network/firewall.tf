@@ -16,7 +16,7 @@ resource "google_compute_firewall" "kubernetes_cluster" {
 
   allow {
     protocol = "tcp"
-    ports    = ['16443']
+    ports    = ["16443"]
   }
 
   source_ranges = var.default_firewall_source_range
