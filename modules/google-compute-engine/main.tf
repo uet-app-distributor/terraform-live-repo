@@ -32,7 +32,7 @@ resource "google_compute_instance" "default" {
 
   metadata = {
     "ssh-keys" = <<EOT
-      ${var.ssh_key.user}: ${var.ssh_key.key}
+      ${join("\n", var.ssh_keys)}
     EOT
   }
 
