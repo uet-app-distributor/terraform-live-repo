@@ -12,7 +12,7 @@ resource "google_storage_bucket_object" "empty_folder" {
   for_each = toset(var.empty_folders)
 
   bucket  = split("/", each.value)[0]
-  name    = split("/", each.value)[1]
+  name    = "${split("/", each.value)[1]}/"
   content = " "
 
   depends_on = [
