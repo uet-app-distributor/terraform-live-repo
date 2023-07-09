@@ -1,5 +1,22 @@
+locals {
+  platform_bucket = "uet-app-distributor"
+}
+
 module "providers" {
   source = "./modules/providers"
+}
+
+module "cloud_storage" {
+  source = "./modules/google-cloud-storage"
+
+  default_buckets = [
+    local.platform_bucket
+  ]
+
+  empty_folders = [
+    "${local.platform_bucket}/customer_apps",
+    "${local.platform_bucket}/deployments"
+  ]
 }
 
 module "network" {
