@@ -52,16 +52,10 @@ variable "custom_sa_email" {
   description = "Custom Service Account email"
 }
 
-variable "ssh_key" {
-  type = object({
-    user = string,
-    key  = string
-  })
-  default = {
-    user = "",
-    key  = ""
-  }
-  description = "SSH key for instance"
+variable "ssh_keys" {
+  type = list(string)
+  default = []
+  description = "SSH keys for instance"
 }
 
 variable "instance_image" {
