@@ -36,12 +36,14 @@ resource "google_compute_instance" "default" {
 EOT
     "startup-script" = <<EOT
 username="devops"
+password="uad-devops"
 
 if id "$username" &>/dev/null; then
     echo "User '$username' exists. Doing nothing."
 else
     echo "User '$username' does not exist. Creating user."
     sudo useradd -m -G sudo "$username"
+    echo "$username:$password" | sudo chpasswd
     echo "User '$username' created with sudo privileges and a home directory."
 fi
 EOT
