@@ -33,7 +33,18 @@ resource "google_compute_instance" "default" {
   metadata = {
     "ssh-keys" = <<EOT
       ${join("\n", var.ssh_keys)}
-    EOT
+EOT
+    "startup-script" = <<EOT
+username="devops"
+
+if id "$username" &>/dev/null; then
+    echo "User '$username' exists. Doing nothing."
+else
+    echo "User '$username' does not exist. Creating user."
+    sudo useradd -m -G sudo "$username"
+    echo "User '$username' created with sudo privileges and a home directory."
+fi
+EOT
   }
 
   service_account {

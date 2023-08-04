@@ -30,7 +30,7 @@ module "network" {
 module "compute_engine" {
   source                = "./modules/google-compute-engine"
   instance_name         = "distributor"
-  instance_machine_type = "e2-standard-2"
+  instance_machine_type = "e2-standard-4"
   instance_image        = "ubuntu-os-cloud/ubuntu-2204-lts"
 
   subnetwork_name  = module.network.subnetwork_name
