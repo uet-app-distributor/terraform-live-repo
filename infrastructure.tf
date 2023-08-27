@@ -6,6 +6,12 @@ module "providers" {
   source = "./modules/providers"
 }
 
+module "iam" {
+  source = "./modules/google-cloud-iam"
+
+  depends_on = [module.providers]
+}
+
 module "cloud_storage" {
   source = "./modules/google-cloud-storage"
 
