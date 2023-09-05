@@ -24,11 +24,11 @@ module "cloud_storage" {
   empty_folders = [
     "${local.platform_bucket}/customer_apps",
     "${local.platform_bucket}/deployments",
-    "general-assets/appsmith"
+    "uad-assets/appsmith"
   ]
 
   public_buckets = [
-    "general-assets"
+    "uad-assets"
   ]
 }
 
