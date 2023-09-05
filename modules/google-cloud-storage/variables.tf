@@ -10,3 +10,15 @@ variable empty_folders {
   default     = []
   description = "List of empty folders"
 }
+
+variable public_buckets {
+  type        = list(string)
+  default     = []
+  description = "Names of public bucket"
+}
+
+variable bucket_location {
+  type        = string
+  default     = "ASIA"
+    description = "Location of buckets"
+}

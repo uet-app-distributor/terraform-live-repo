@@ -15,13 +15,20 @@ module "iam" {
 module "cloud_storage" {
   source = "./modules/google-cloud-storage"
 
+  bucket_location = "ASIA"
+
   default_buckets = [
     local.platform_bucket
   ]
 
   empty_folders = [
     "${local.platform_bucket}/customer_apps",
-    "${local.platform_bucket}/deployments"
+    "${local.platform_bucket}/deployments",
+    "general-assets/appsmith"
+  ]
+
+  public_buckets = [
+    "general-assets"
   ]
 }
 
